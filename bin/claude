@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Claude Code v2.1.299 Reconstructed Entrypoint (powered by extracted @anthropic-ai/bun-internal runtime)
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+SRC_DIR="$PROJECT_ROOT/src"
+BUN_ANT="$SCRIPT_DIR/bun-ant"
+
+if [ -x "$BUN_ANT" ]; then
+    exec "$BUN_ANT" run "$SRC_DIR/cli" "$@"
+else
+    exec bun run "$SRC_DIR/cli" "$@"
+fi

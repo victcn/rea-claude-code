@@ -1,0 +1,26 @@
+# Large compiled binary artifacts (>100MB, generated via `bun run pack` or `bun run extract`)
+dist/
+bin/bun-ant
+*.tgz
+*.tar.gz
+*.exe
+
+# Local isolated runtime state & caches
+.isolated-env/
+.claude/
+.claude.json*
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables & local secrets
+.env
+.env.local
+.env.*.local
+
+# Logs & temporary files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

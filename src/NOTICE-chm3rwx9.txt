@@ -1,0 +1,4 @@
+psl-data.json in this folder is the Public Suffix List, https://publicsuffix.org/
+(source: https://publicsuffix.org/list/public_suffix_list.dat), converted to JSON without other changes.
+It is made available under the Mozilla Public License, v. 2.0: https://mozilla.org/MPL/2.0/
+The rest of this plugin is not covered by that license.

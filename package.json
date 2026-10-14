@@ -1,0 +1,34 @@
+{
+  "name": "@anthropic-ai/claude-code-reconstructed",
+  "version": "2.1.299",
+  "description": "Full static & runtime reconstruction of Claude Code v2.1.299 from the Bun standalone ELF binary",
+  "type": "module",
+  "bin": {
+    "claude": "./bin/claude"
+  },
+  "scripts": {
+    "start": "bun run ./src/cli",
+    "version": "bun run ./src/cli --version --verbose",
+    "help": "bun run ./src/cli --help",
+    "extract": "python3 ./scripts/extract-from-binary.py",
+    "format": "bun run ./scripts/format-sources.mjs",
+    "reconstruct-assets": "bun run ./scripts/reconstruct-assets.mjs",
+    "build-map": "python3 ./scripts/build-module-map.py",
+    "rebuild-all": "python3 ./scripts/extract-from-binary.py && bun run ./scripts/format-sources.mjs && bun run ./scripts/reconstruct-assets.mjs && python3 ./scripts/build-module-map.py",
+    "test": "python3 ./scripts/self-test.py",
+    "pack": "python3 ./scripts/pack-binary.py",
+    "isolated": "bash ./scripts/run-isolated.sh"
+  },
+  "engines": {
+    "bun": ">=1.2.0",
+    "node": ">=22.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victcn/rea-claude-code.git"
+  },
+  "homepage": "https://github.com/victcn/rea-claude-code#readme",
+  "bugs": {
+    "url": "https://github.com/victcn/rea-claude-code/issues"
+  }
+}

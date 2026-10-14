@@ -1,0 +1,7 @@
+© Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+---
+Research & Reconstruction Notice:
+The reverse-engineering extraction scripts, AST formatting pipeline, module graph scripts,
+and test suite in `scripts/` are provided for architecture research and interoperability testing.
+The extracted Claude Code client modules in `src/` remain subject to Anthropic PBC's terms above.

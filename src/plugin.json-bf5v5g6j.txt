@@ -1,0 +1,27 @@
+{
+  "name": "claude-test",
+  "displayName": "Claude Test",
+  "version": "0.4.28",
+  "description": "Checks that your web app still works. Runs the plain-language specs committed in .claude-test/specs/ against your local dev server in a real browser, in the background, and reports PASS or FAIL per spec with a screenshot. Proposes a starter set of specs on the first run.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "keywords": [
+    "testing",
+    "browser",
+    "regression",
+    "playwright",
+    "qa"
+  ],
+  "mcpServers": {
+    "browser": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/skills/run/scripts/playwright-mcp.mjs"
+      ],
+      "env": {
+        "CLAUDE_TEST_PROJECT_DIR": "${CLAUDE_PROJECT_DIR}"
+      }
+    }
+  }
+}

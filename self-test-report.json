@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-10-14T13:10:45Z",
+  "endpoints_tested": [
+    "http://127.0.0.1:8011",
+    "http://127.0.0.1:8012"
+  ],
+  "passed": 11,
+  "total": 11,
+  "results": [
+    {
+      "name": "1. CLI Version & Commit Verification",
+      "passed": true,
+      "detail": "2.1.299 (Claude Code) | Commit: c416f56ec7eca27e49747c35af51d5c92c856ba1",
+      "elapsed_s": 0.02
+    },
+    {
+      "name": "2. CLI Help & Subcommands Inventory",
+      "passed": true,
+      "detail": "Help output length=22108 chars",
+      "elapsed_s": 0.67
+    },
+    {
+      "name": "3. Port 8011 Gateway End-to-End Call (http://127.0.0.1:8011)",
+      "passed": true,
+      "detail": "output='PONG_8011'",
+      "elapsed_s": 4.17
+    },
+    {
+      "name": "4. Port 8012 Claude Protocol Gateway + Built-in Hook Plugins Lifecycle",
+      "passed": true,
+      "detail": "hooks_lifecycle_ok=True, output='PONG_8012'",
+      "elapsed_s": 13.84
+    },
+    {
+      "name": "5. JSON Output Format & Custom --system-prompt",
+      "passed": true,
+      "detail": "subtype=success, result='Hello! SYS_PROMPT_ACTIVE'",
+      "elapsed_s": 13.39
+    },
+    {
+      "name": "6. Realtime Stream-JSON Output (--output-format stream-json --include-partial-messages)",
+      "passed": true,
+      "detail": "frames=11, event_types=['assistant', 'result', 'stream_event', 'system']",
+      "elapsed_s": 13.29
+    },
+    {
+      "name": "7. Core Built-in Tools End-to-End (Glob, Grep, Read, Edit, Write, Bash)",
+      "passed": true,
+      "detail": "calc.py_fixed=True, verify.py_created=True, output_has_42=True",
+      "elapsed_s": 63.28
+    },
+    {
+      "name": "8. Session Persistence & Multi-Turn Resume (--session-id / --resume)",
+      "passed": true,
+      "detail": "session_id=f8acfbe6-1764-41fa-89a7-16b019ce9259, recalled=True, reply='OMEGA_9482_VAULT'",
+      "elapsed_s": 23.29
+    },
+    {
+      "name": "9. Custom Subagent Delegation (--agents & Agent Tool)",
+      "passed": true,
+      "detail": "subagent_reply='SUBAGENT_AUDIT_PASSED_777'",
+      "elapsed_s": 46.01
+    },
+    {
+      "name": "10. Stdio MCP Server Integration (--mcp-config & Tool Execution)",
+      "passed": true,
+      "detail": "mcp_output='MCP_SIGNATURE_VERIFIED_2026'",
+      "elapsed_s": 26.9
+    },
+    {
+      "name": "11. Root Privilege Bypass Security Guard (refuseBypassUnderRoot)",
+      "passed": true,
+      "detail": "exit_code=1, stderr='--dangerously-skip-permissions cannot be used with root/sudo privileges for secu'",
+      "elapsed_s": 0.85
+    }
+  ]
+}

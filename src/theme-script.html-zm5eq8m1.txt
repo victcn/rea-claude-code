@@ -1,0 +1,24 @@
+<script>
+  /* The viewer toggle stamps data-theme on the root element; the vendored
+     CDS token block below keys its toggle axis on data-mode (the CDS
+     convention) and cannot be edited (provenance-tested byte-identical).
+     Mirroring the attribute lets that block serve the viewer toggle with
+     its own precedence rules — toggle beats OS in both directions. Static,
+     no author bytes. Without JS the toggle axis is inert and the OS axis
+     (pure CSS) still themes the page. */
+  (function () {
+    var root = document.documentElement;
+    var sync = function () {
+      var t = root.getAttribute('data-theme');
+      if (t) root.setAttribute('data-mode', t);
+      else root.removeAttribute('data-mode');
+    };
+    sync();
+    if (typeof MutationObserver !== 'undefined') {
+      new MutationObserver(sync).observe(root, {
+        attributes: true,
+        attributeFilter: ['data-theme'],
+      });
+    }
+  })();
+</script>

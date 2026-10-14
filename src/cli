@@ -1,0 +1,565 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.299
+import { z } from "./chunk-bmq0vae0.js";
+
+import { b } from "./chunk-hwdwjvh8.js";
+
+import { zjn } from "./chunk-9h035atz.js";
+
+import { hut, yut, zse, YRs, F1 } from "./chunk-akt0hp0c.js";
+
+import { QRs } from "./chunk-6dgmzxjg.js";
+
+import { d4n } from "./chunk-eha3vdmz.js";
+
+function nt() {
+  try {
+    process.cwd();
+    return;
+  } catch (s) {
+    let f = s instanceof Error && "code" in s && typeof s.code === "string" ? s.code : void 0;
+    if (f === "ENOENT") return "The current directory no longer exists (it was deleted or moved). Start Claude Code from an existing directory.";
+    return `Can't read the current directory${f ? ` (${f})` : ""}. Start Claude Code from a different directory.`;
+  }
+}
+
+process.env.NoDefaultCurrentDirectoryInExePath = "1";
+
+process.env.COREPACK_ENABLE_AUTO_PIN = "0";
+
+d4n();
+
+if (process.env.CLAUDE_CODE_REMOTE === "true") {
+  let s = process.env.NODE_OPTIONS || "";
+  process.env.NODE_OPTIONS = s ? `${s} --max-old-space-size=8192` : "--max-old-space-size=8192";
+}
+
+function at(s) {
+  for (let f = 0; f < s.length; f++) {
+    let t = s[f];
+    if (t === "--debug" || t === "-d" || t === "--debug-to-stderr" || t === "-d2e" || t.startsWith("--debug=") || t.startsWith("--debug-file=")) continue;
+    if (t === "--debug-file" && f + 1 < s.length) {
+      f++;
+      continue;
+    }
+    return !1;
+  }
+  return !0;
+}
+
+function ct(s) {
+  let f = s.indexOf("--");
+  return (f === -1 ? s : s.slice(0, f)).includes("--desktop");
+}
+
+function xt(s) {
+  let f, t, N, P, H, r, Y = [];
+  for (let a = 0; a < s.length; a++) {
+    let x = s[a], l = x.indexOf("="), [R, k] = l > 0 ? [ x.slice(0, l), x.slice(l + 1) ] : [ x, void 0 ], L = k !== void 0 || a + 1 < s.length;
+    if (R === "--dangerously-skip-permissions") f = "bypassPermissions"; else if (R === "--allow-dangerously-skip-permissions") r = !0; else if (R === "--permission-mode" && L) f = k ?? s[++a]; else if (R === "--inherit-permission-mode" && L) t = k ?? s[++a]; else if (R === "--model" && L) N = k ?? s[++a]; else if (R === "--effort" && L) P = k ?? s[++a]; else if (R === "--agent" && L) H = k ?? s[++a]; else Y.push(x);
+  }
+  let B = f ?? t;
+  return {
+    dispatchDefaults: B || N || P || H || r ? {
+      permissionMode: B,
+      ...!f && t && {
+        permissionModeInherited: !0
+      },
+      model: N,
+      effort: P,
+      agent: H,
+      allowBypass: r
+    } : void 0,
+    rest: Y
+  };
+}
+
+async function Ut() {
+  if (process.env.CCR_AGENT_PROXY_TOKEN_FILE_DESCRIPTOR !== void 0 || process.argv.includes("--session-tunnel")) {
+    let {guardRelayTokenDescriptor: e} = import.meta.require("./chunk-vt22n2zm.js");
+    e();
+  }
+  let s = QRs();
+  if (s === "refused") return;
+  let f = zjn(process.argv);
+  if (f) console.error(f), process.exit(1);
+  let t = process.argv.slice(2);
+  if ((t.length === 1 || t.length === 2 && t[1] === "--verbose") && (t[0] === "--version" || t[0] === "-v" || t[0] === "-V")) {
+    if (console.log(`${{
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.299",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-10-13T21:37:33Z",
+      GIT_SHA: "c416f56ec7eca27e49747c35af51d5c92c856ba1",
+      HOOKS_WORKER_URL: "./src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "default"
+    }.VERSION} (Claude Code)${F1()}`), t.length === 2 && {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.299",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-10-13T21:37:33Z",
+      GIT_SHA: "c416f56ec7eca27e49747c35af51d5c92c856ba1",
+      HOOKS_WORKER_URL: "./src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "default"
+    }.GIT_SHA) console.log(`Commit: ${{
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.299",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-10-13T21:37:33Z",
+      GIT_SHA: "c416f56ec7eca27e49747c35af51d5c92c856ba1",
+      HOOKS_WORKER_URL: "./src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "default"
+    }.GIT_SHA}`);
+    return;
+  }
+  let N = nt();
+  if (N) {
+    console.error(N);
+    let {writeStartupFailureResult: e} = await import("./chunk-j27f0gqt.js"), {randomUUID: o} = await import("crypto");
+    await e({
+      sessionId: o(),
+      message: N,
+      reason: "cwd_unavailable"
+    }), process.exit(1);
+  }
+  let {profileCheckpoint: P} = await import("./chunk-xgrcjgba.js");
+  P("cli_entry");
+  let H = t[0] === "--preload" || t[0] === "--bg-spare", r = !H && process.env.CLAUDE_CODE_HOVER_REST ? (await import("./chunk-5vb8ydm1.js")).pinStorageV5FromEnv() : void 0;
+  if (!H) setTimeout(() => {
+    if (process.env.CLAUDE_CODE_JIT_POLICY_AFTER_STARTUP) import("./chunk-jsder72h.js").then(e => e.setJitPolicyAfterStartup()); else if (typeof Bun < "u") Bun.unsafe.setJITPolicy?.(1);
+  }, 1e4).unref();
+  if (s !== void 0) {
+    let {loadFastPathPolicy: e} = await import("./chunk-e1me9nyn.js"), o = await e(r);
+    if (o) {
+      let {exitWithError: h} = await import("./chunk-gttxwmxv.js");
+      h(o);
+    }
+    let {ghStandinMain: i} = await import("./chunk-51rsh64s.js");
+    await i(s);
+    return;
+  }
+  if (t[0] === "plugin" && t[1] === "test") {
+    let [{loadFastPathPolicy: e}, {pluginTestFormOf: o, pluginTestGatesOf: i, pluginTestRefusal: h}, {endPluginTest: E}] = await Promise.all([ import("./chunk-e1me9nyn.js"), import("./chunk-2fg7s11q.js"), import("./chunk-phkp2xef.js") ]), u = h(await i({
+      helperError: await e(r),
+      form: o(t.slice(2)),
+      envPin: r
+    }));
+    if (t[2] === "--file" && u !== void 0) {
+      let {REPORT_MARK: w} = await import("./chunk-9gahyxf7.js");
+      process.stdout.write(`${w}${JSON.stringify({
+        file: t[3],
+        results: [],
+        error: u
+      })}\n`);
+      return;
+    }
+    if (u !== void 0) return process.stderr.write(`claude plugin test: ${u}\n`), process.exitCode = 1, 
+    E(process.exitCode);
+    let {pluginTestMain: d} = await import("./chunk-2bdgdke3.js");
+    return process.exitCode = await d(t.slice(2)), E(process.exitCode);
+  }
+  if (process.argv[2] === "--eval-mock-server") {
+    P("cli_eval_mock_server_path");
+    let {runEvalMockServer: e} = await import("./chunk-shsy3zfn.js");
+    try {
+      await e(process.argv[3], process.argv[4]);
+    } catch (o) {
+      console.error(`--eval-mock-server: ${o instanceof Error ? o.message : String(o)}`), 
+      process.exitCode = 1;
+    }
+    return;
+  }
+  if (process.argv[2] === "--claude-in-chrome-mcp") {
+    P("cli_claude_in_chrome_mcp_path");
+    let {runClaudeInChromeMcpServer: e} = await import("./chunk-1dyvfecg.js");
+    await e(r);
+    return;
+  } else if (process.argv[2] === "--chrome-native-host") {
+    P("cli_chrome_native_host_path");
+    let {runChromeNativeHost: e} = await import("./chunk-709td6mp.js");
+    await e();
+    return;
+  }
+  if (t[0] === "--daemon-worker") {
+    let {loadFastPathPolicy: e} = await import("./chunk-e1me9nyn.js"), o = await e(r);
+    if (o) process.stderr.write(`${o}\n`);
+    let {sessionFactsRestored: i} = await import("./chunk-0e3esqzk.js"), h = await i(r);
+    if (h !== null) {
+      let {endsInARowOf: u, workerEndingOf: d} = await import("./chunk-ygaemjjb.js"), w = d(h, u(t[2]));
+      process.stderr.write(w.said), process.exit(w.code);
+    }
+    let {runDaemonWorker: E} = await import("./chunk-dh6btxmx.js");
+    await E(t[1], r);
+    return;
+  }
+  if (t[0] === "--bg-pty-host") {
+    let {ensureFastPathSettingsLoaded: e} = await import("./chunk-e1me9nyn.js");
+    try {
+      await e(r);
+    } catch (i) {
+      process.stderr.write(`ptyHost: settings bootstrap threw (continuing; supervisor already gated): ${i?.stack ?? String(i)}\n`);
+    }
+    let {runPtyHost: o} = await import("./chunk-854nc0se.js");
+    await o(t.slice(1));
+    return;
+  }
+  if (t[0] === "--bg-spare") {
+    let {ensureFastPathSettingsLoaded: e} = await import("./chunk-e1me9nyn.js");
+    await e(void 0);
+    let {runBgSpare: o} = await import("./chunk-crszh705.js");
+    await o(t.slice(1));
+    return;
+  }
+  if (t[0] === "--preload") {
+    let {ensureFastPathSettingsLoaded: e} = await import("./chunk-e1me9nyn.js");
+    await e(void 0);
+    let {runPreload: o} = await import("./chunk-4g3m7ccy.js");
+    await o(t.slice(1));
+    return;
+  }
+  if (t[0] === "remote-control" || t[0] === "rc" || t[0] === "remote" || t[0] === "sync" || t[0] === "bridge") {
+    P("cli_bridge_path");
+    let {loadFastPathPolicy: e} = await import("./chunk-e1me9nyn.js");
+    {
+      let n = await e(r);
+      if (n) {
+        let {exitWithError: _} = await import("./chunk-gttxwmxv.js");
+        _(n);
+      }
+    }
+    let {sessionFactsRestored: o} = await import("./chunk-0e3esqzk.js"), i = await o(r);
+    if (i !== null) {
+      let {exitWithError: n} = await import("./chunk-gttxwmxv.js");
+      n(i.reason);
+    }
+    let {refuseRemoteControlLocally: h, refuseRemoteControlIneligible: E, startRemoteControl: u} = await import("./chunk-e74f06d8.js"), d = await h(), [{pinStorageV5: w}, {seedInstallIDs: T}] = await Promise.all([ import("./chunk-q3bry4b5.js"), import("./chunk-2phrn1w8.js") ]), S = w(r);
+    if (z() && S !== void 0) {
+      let [{credentialsStoreFor: n}, {setGrowthBookCredentials: _, setGrowthBookStorageBackend: y}, {composePolicyLimitsClient: U, primePolicyLimitsCache: V}, {primeFastPathCredentials: W}] = await Promise.all([ import("./chunk-k930kb2p.js"), import("./chunk-qt993hka.js"), import("./chunk-egjan19g.js"), import("./chunk-fv97hf0r.js") ]), G = n(S);
+      _(G), y(S), U({
+        storageV5: S,
+        credentials: G
+      }), await W(G), await V(S), await T(S);
+    }
+    let [{initSinks: F}, {initialize1PEventLogging: p}, {credentialsStoreFor: c}, {initDefaultDebugLog: m}, {watchGlobalConfigThroughStorage: v}] = await Promise.all([ import("./chunk-2ds72f6w.js"), import("./chunk-nry35a89.js"), import("./chunk-k930kb2p.js"), import("./chunk-fs90awgg.js"), import("./chunk-2phrn1w8.js") ]);
+    F();
+    let D = c(S);
+    p(S);
+    let O = await E(d);
+    if (z() && S !== void 0) m({
+      storageV5: S
+    }), v(S);
+    await u(O, t.slice(1), S, D);
+    return;
+  }
+  {
+    let e = YRs(t);
+    if (e !== null) {
+      P("cli_daemon_path");
+      let {ensureFastPathSettingsLoaded: o} = await import("./chunk-e1me9nyn.js");
+      await o(r);
+      let {initializeErrorLogSink: i} = await import("./chunk-py26txvx.js");
+      i();
+      let {daemonMain: h} = await import("./chunk-9zwgt3e5.js");
+      await h(e, r);
+      return;
+    }
+  }
+  let Y = process.env.CLAUDE_CODE_SESSION_KIND === "bg", B = t.some(e => e === "logs" || e === "attach" || e === "stop" || e === "kill" || e === "respawn" || e === "rm") ? import.meta.require("./chunk-kqrpfk7b.js").backgroundSessionVerbIndex(t, {
+    behindRootOptions: !Y
+  }) : -1, a = B === -1 ? [] : t.slice(B), x = t.includes("--bg") || t.includes("--background") ? import.meta.require("./chunk-kqrpfk7b.js").hasBackgroundFlag(t) : !1;
+  if (a.length > 0 || x) {
+    if (P("cli_bg_path"), ct(t)) console.error(a.length > 0 ? `--desktop can't be combined with \`claude ${a[0]}\`.` : "--desktop opens the Claude Desktop app and can't run in the background (`--bg`, `--background`, `--routine`)."), 
+    process.exit(1);
+    if (B > 0) {
+      let [{eagerParseCliFlag: c}, {loadSettingsFromFlag: m, loadManagedSettingsFromFlag: v}] = await Promise.all([ import("./chunk-kqrpfk7b.js"), import("./chunk-m6fen30g.js") ]), D = t.slice(0, B), O = c("--settings", D);
+      if (O) m(O);
+      let n = c("--managed-settings", D);
+      if (n) v(n);
+    }
+    let {loadFastPathPolicy: e} = await import("./chunk-e1me9nyn.js"), {sessionFactsRestored: o} = await import("./chunk-0e3esqzk.js"), i = null, h = [ "logs", "stop", "kill", "rm" ].includes(a[0] ?? "");
+    {
+      let c = await e(r);
+      if (c) if (h) process.stderr.write(`${c}\n`); else {
+        let {exitWithError: m} = await import("./chunk-gttxwmxv.js");
+        m(c);
+      }
+      if (i = await o(r), i !== null && !h) {
+        let {exitWithError: m} = await import("./chunk-gttxwmxv.js");
+        m(i.reason);
+      }
+    }
+    let E = i === null;
+    if (i !== null) process.stderr.write(`${i.reason}\n`);
+    let u = await import("./chunk-3v97mt6s.js");
+    if (await u.ensureFleetGateHydrated({
+      kickGrowthBook: E && !h
+    }), !u.isAgentsFleetEnabled()) {
+      let c = a[0] ?? t.find(m => m === "--bg" || m === "--background" || m === "--routine" || m.startsWith("--routine=")) ?? "--bg";
+      return u.fleetGateRejected(c);
+    }
+    let [d, {pinStorageV5: w}, {initDefaultDebugLog: T}, {seedInstallIDs: S, watchGlobalConfigThroughStorage: F}] = await Promise.all([ import("./chunk-25q6cdr0.js"), import("./chunk-q3bry4b5.js"), import("./chunk-fs90awgg.js"), import("./chunk-2phrn1w8.js") ]), p = w(r);
+    if (z() && p !== void 0) {
+      T({
+        storageV5: p
+      }), F(p);
+      let [{credentialsStoreFor: c}, {setGrowthBookCredentials: m, setGrowthBookStorageBackend: v}, {composePolicyLimitsClient: D, primePolicyLimitsCache: O}, {primeFastPathCredentials: n}] = await Promise.all([ import("./chunk-k930kb2p.js"), import("./chunk-qt993hka.js"), import("./chunk-egjan19g.js"), import("./chunk-fv97hf0r.js") ]), _ = c(p);
+      m(_), v(p), D({
+        storageV5: p,
+        credentials: _
+      }), await n(_), await O(p), await S(p);
+    }
+    switch (a[0]) {
+     case "logs":
+     case "attach":
+     case "stop":
+     case "kill":
+     case "respawn":
+     case "rm":
+      {
+        let [{initializeAnalyticsSink: c}, {initialize1PEventLogging: m, shutdown1PEventLogging: v}, {shutdownDatadog: D}, {sleep: O}] = await Promise.all([ import("./chunk-jphqj2yx.js"), import("./chunk-nry35a89.js"), import("./chunk-8rdzrsat.js"), import("./chunk-11vsrj4g.js") ]);
+        if (E) c(), m(p);
+        if (a[0] === "logs") await d.logsHandler(a[1], p); else if (a[0] === "attach") await d.attachHandler(a[1], p); else if (a[0] === "respawn") await d.respawnHandler(a[1], p); else if (a[0] === "rm") await d.rmHandler(a[1], p, void 0, E); else await d.stopHandler(a[1], p, E);
+        return await Promise.race([ Promise.all([ v(), D() ]), O(500, void 0, {
+          unref: !0
+        }) ]).catch(() => {}), process.exit(process.exitCode ?? 0);
+      }
+
+     default:
+      {
+        let [{initializeAnalyticsSink: c}, {initialize1PEventLogging: m, shutdown1PEventLogging: v}, {shutdownDatadog: D}, {logEvent: O}, {sleep: n}] = await Promise.all([ import("./chunk-jphqj2yx.js"), import("./chunk-nry35a89.js"), import("./chunk-8rdzrsat.js"), import("./chunk-4q7vvg1t.js"), import("./chunk-11vsrj4g.js") ]);
+        c(), m(p), O("tengu_background", {
+          via_flag: !0,
+          via: b("flag")
+        }), await d.handleBgFlag(t, p), await Promise.race([ Promise.all([ v(), D() ]), n(500, void 0, {
+          unref: !0
+        }) ]).catch(() => {}), process.exit(process.exitCode ?? 0);
+      }
+    }
+    return;
+  }
+  let l = hut(t);
+  l.config.restricted ||= [ "1", "true", "yes", "on" ].includes((process.env.CLAUDE_CODE_RESTRICTED ?? "").toLowerCase().trim());
+  let {dispatchDefaults: R, rest: k} = xt(l.rest), L = l.hasAgentsPositional && at(k);
+  if ((L || at(t) && process.stdin.isTTY) && process.stdout.isTTY) {
+    let {startCapturingEarlyInput: e, consumeEarlyInput: o} = await import("./chunk-13dqv7v4.js");
+    e();
+    let [{startMdmRawRead: i}, {startKeychainPrefetch: h}] = await Promise.all([ import("./chunk-6y47ns9x.js"), import("./chunk-6hsjv8s2.js") ]);
+    i(), h();
+    let {enableConfigs: E, getGlobalConfig: u, seedInstallIDs: d} = await import("./chunk-2phrn1w8.js"), w = !1, T = !1, S = !1;
+    try {
+      await E(z() ? r?.backend : void 0), T = u().defaultToAgentsView === !0, w = L || T;
+    } catch {}
+    if (w) {
+      if (l.config.settings || l.config.managedSettings) {
+        let {loadSettingsFromFlag: n, loadManagedSettingsFromFlag: _} = await import("./chunk-m6fen30g.js");
+        if (l.config.settings) n(l.config.settings);
+        if (l.config.managedSettings) _(l.config.managedSettings);
+      }
+      if (l.config.pluginDir.length > 0 || l.config.pluginDirNoMcp.length > 0) {
+        let [{setInlinePlugins: n, setInlinePluginsNoMcp: _}, {clearPluginCache: y}] = await Promise.all([ import("./chunk-84b4c0ck.js"), import("./chunk-xjjnes5g.js") ]);
+        n(l.config.pluginDir), _(l.config.pluginDirNoMcp), y("claude agents --plugin-dir");
+      }
+      let {loadFastPathPolicy: F} = await import("./chunk-e1me9nyn.js"), p = await F(r);
+      if (p) {
+        let {exitWithError: n} = await import("./chunk-gttxwmxv.js");
+        n(p);
+      }
+      let c;
+      if (process.env.CLAUDE_CODE_PLUGIN_DIRS?.trim()) {
+        let [{mergePluginDirs: n, PLUGIN_DIRS_ENV_RECOVERY_HINT: _, PLUGIN_DIRS_ENV_VAR: y, settlePluginDirsEnv: U, withoutPluginDirs: V}, {setInlinePlugins: W}, {clearPluginCache: G}] = await Promise.all([ import("./chunk-bntpacnd.js"), import("./chunk-84b4c0ck.js"), import("./chunk-xjjnes5g.js") ]), K = V(U(), l.config.pluginDirNoMcp);
+        if (K.length > 0) c = {
+          name: y,
+          hint: _
+        }, W(n(l.config.pluginDir, K)), G("claude agents CLAUDE_CODE_PLUGIN_DIRS");
+      }
+      {
+        let {areSideloadFlagsDisabledByPolicy: n, sideloadFlagsBlockedMessage: _} = await import("./chunk-z05cr0jn.js");
+        if (n()) {
+          let y = [];
+          if (l.config.pluginDir.length > 0) y.push("--plugin-dir");
+          if (l.config.pluginDirNoMcp.length > 0) y.push("--plugin-dir-no-mcp");
+          if (c) y.push(c.name);
+          if (y.length > 0) {
+            let {exitWithError: U} = await import("./chunk-gttxwmxv.js");
+            U(c ? `${_(y)} ${c.hint}` : _(y));
+          }
+        }
+      }
+      let {isAgentsFleetEnabled: m, ensureFleetGateHydrated: v, fleetGateRejected: D, consumeAgentViewRelaunchMarker: O} = await import("./chunk-3v97mt6s.js");
+      if (await v({
+        kickGrowthBook: !1
+      }), w && m()) {
+        let {sessionFactsRestored: n} = await import("./chunk-0e3esqzk.js"), _ = await n(r);
+        if (_ !== null) {
+          let {exitWithError: g} = await import("./chunk-gttxwmxv.js");
+          g(_.reason);
+        }
+        let [{applyFleetViewHostWindowsEnv: y}, {createRoot: U}, {getBaseRenderOptions: V}, {resolve: W}, {getRootSession: G, setCliSessionConfigCarried: K, setIsInteractive: Et, setRestrictedSession: _t, setSessionStartType: Ct}, {cliCarriesSessionConfig: St}, {pinStorageV5: Pt}, {appliedSettingSourcesFlagValue: vt}] = await Promise.all([ import("./chunk-6hbvrxe6.js"), import("./chunk-ymxrj2qn.js"), import("./chunk-7sg059ht.js"), import("path"), import("./chunk-84b4c0ck.js"), import("./chunk-msbqpe7a.js"), import("./chunk-q3bry4b5.js"), import("./chunk-cgmnd8hs.js") ]), Q = {
+          ...l.config,
+          settingSources: vt()
+        }, C = Pt(r), j;
+        if (z() && C !== void 0) {
+          let [{credentialsStoreFor: g}, {setGrowthBookCredentials: I, setGrowthBookStorageBackend: M}, {primeFastPathCredentials: X}] = await Promise.all([ import("./chunk-k930kb2p.js"), import("./chunk-qt993hka.js"), import("./chunk-fv97hf0r.js") ]);
+          j = g(C), I(j), M(C), await X(j), await d(C);
+        }
+        import("./chunk-015ddmcz.js").then(({resolveSetting: g}) => {
+          let {value: I} = g("theme", "dark");
+          if (I.startsWith("custom:")) import("./chunk-0a68vgvr.js").then(M => M.loadCustomThemes(C));
+        });
+        let At = O();
+        Et(!0), K(St({
+          ...Q,
+          ...R
+        })), _t(l.config.restricted), Ct("agents_view");
+        let tt = () => {};
+        process.on("unhandledRejection", tt);
+        let et = Promise.resolve(), it = () => {}, Rt = new Promise(g => {
+          it = g;
+        });
+        setImmediate(async () => {
+          if (z() && C !== void 0) try {
+            let [{credentialsStoreFor: g}, {composePolicyLimitsClient: I, primePolicyLimitsCache: M}] = await Promise.all([ import("./chunk-k930kb2p.js"), import("./chunk-egjan19g.js") ]);
+            I({
+              storageV5: C,
+              credentials: g(C)
+            }), await M(C);
+          } catch (g) {
+            import("./chunk-fs90awgg.js").then(({logForDebugging: I}) => I(`Policy limits: start-up composition on the agents path failed: ${g instanceof Error ? g.message : String(g)}`, {
+              level: "warn"
+            }));
+          }
+          et = Promise.all([ import("./chunk-wvc9khvf.js"), import("./chunk-py26txvx.js"), import("./chunk-jphqj2yx.js"), import("./chunk-nry35a89.js"), import("./chunk-4q7vvg1t.js"), import("./chunk-3wab9428.js"), import("./chunk-qt993hka.js"), import("./chunk-6brrfqdc.js"), import("./chunk-2phrn1w8.js"), import("./chunk-k8hrxgsx.js"), import("./chunk-156b7t87.js"), import("./chunk-fs90awgg.js") ]).then(([{setupGracefulShutdown: g}, {initializeErrorLogSink: I}, {initializeAnalyticsSink: M}, {initialize1PEventLogging: X}, {logEvent: Lt}, {captureTeammateModeSnapshotIfEnabled: It}, {initializeGrowthBook: kt}, {initializeTelemetryAfterTrust: bt}, {checkHasTrustDialogAccepted: st, watchGlobalConfigThroughStorage: Ft}, {applyConfigEnvironmentVariables: Mt}, {setRepoDetectionGuards: Nt}, {initDefaultDebugLog: Bt}]) => {
+            if (g({
+              storageV5: C,
+              credentials: j
+            }), Nt({
+              trustProbe: st
+            }), kt().catch(() => {}), I(), M(), X(C), z() && C !== void 0) Bt({
+              storageV5: C
+            }), Ft(C);
+            return Rt.then(() => {
+              if (st()) Mt(), bt(C);
+            }), Lt("tengu_fleetview", {
+              defaultToAgentsView: T,
+              relaunch: At
+            }), It();
+          }).finally(() => process.off("unhandledRejection", tt)), import("./chunk-1b2st7vj.js").then(g => g.startBackgroundHousekeeping(G().host, C));
+        }), o(), y();
+        let J = R?.permissionMode === "bypassPermissions" || R?.allowBypass ? await import("./chunk-5ky29xgm.js") : void 0;
+        J?.refuseBypassUnderRoot(R);
+        let ot = J?.applyBypassPolicyGate(R) ?? R, q = await U(V(!1)), {ensureAgentsWorkspaceTrust: Dt, agentsTrustDecision: yt} = await import("./chunk-f6k97317.js");
+        if (await Dt(q, yt(), C), it(), J) await J.ensureAgentsBypassConsent(q, ot, C);
+        let rt = await import("./chunk-3v97mt6s.js"), Tt = {
+          cwdFilter: l.cwdFilter,
+          dispatchExtraArgs: zse(yut(Q, W)),
+          dispatchDefaults: ot,
+          entryChannel: rt.isListReturnRelaunch() ? "list_return" : L ? "cli_agents" : "default_home",
+          storageV5: C,
+          credentials: j
+        };
+        {
+          let {mountFleetViewWithComposerBack: g} = await import("./chunk-f2zm61ny.js");
+          await g(q, Tt);
+        }
+        await et.catch(() => {});
+        let {gracefulShutdown: Ot} = await import("./chunk-wvc9khvf.js");
+        await Ot(0, "other", {
+          suppressResumeHint: !0
+        });
+        return;
+      }
+      if (L) return D("claude agents");
+    }
+  }
+  if (t[0] === "self-hosted-runner") {
+    P("cli_self_hosted_runner_path");
+    let e = t[1];
+    if (e === "orchestrator") {
+      let {selfHostedRunnerOrchestratorMain: i} = await import("./chunk-8n1aqh55.js");
+      await i(t.slice(2));
+      return;
+    }
+    if (e === "setup") {
+      let {selfHostedRunnerSetupMain: i} = await import("./chunk-qaa9ans1.js");
+      await i(t.slice(2), r);
+      return;
+    }
+    if (e === "doctor") {
+      let {selfHostedRunnerDoctorMain: i} = await import("./chunk-ctg45v0p.js");
+      await i(t.slice(2), r);
+      return;
+    }
+    if (e === "code-sign") {
+      let {selfHostedRunnerCodeSignMain: i} = await import("./chunk-w011bsgr.js");
+      await i(t.slice(2));
+      return;
+    }
+    if (e === "decode-token") {
+      let {selfHostedRunnerDecodeTokenMain: i} = await import("./chunk-kgv5wqc8.js");
+      await i(t.slice(2));
+      return;
+    }
+    let {selfHostedRunnerMain: o} = await import("./chunk-f3hpwdpc.js");
+    await o(t.slice(1));
+    return;
+  }
+  if ((t.includes("--tmux") || t.includes("--tmux=classic")) && (t.includes("-w") || t.includes("--worktree") || t.some(e => e.startsWith("--worktree=")))) {
+    if (P("cli_tmux_worktree_fast_path"), ct(t)) console.error("--desktop only opens the Claude Desktop app; it can't be combined with `--worktree` or `--tmux`."), 
+    process.exit(1);
+    let {eagerLoadSettings: e} = await import("./chunk-m6fen30g.js");
+    e();
+    let {loadFastPathPolicy: o} = await import("./chunk-e1me9nyn.js");
+    {
+      let E = await o(r);
+      if (E) {
+        let {exitWithError: u} = await import("./chunk-gttxwmxv.js");
+        u(E);
+      }
+    }
+    let {configureFastPathGlobalAgents: i} = await import("./chunk-mkrakx6v.js");
+    i();
+    let {isWorktreeModeEnabled: h} = await import("./chunk-h57sntxc.js");
+    if (h()) {
+      let [{execIntoTmuxWorktree: E}, {pinStorageV5: u}, {initDefaultDebugLog: d}] = await Promise.all([ import("./chunk-bd8v96dm.js"), import("./chunk-q3bry4b5.js"), import("./chunk-fs90awgg.js") ]), w = u(r), T;
+      if (z() && w !== void 0) {
+        d({
+          storageV5: w
+        });
+        let [{credentialsStoreFor: p}, {setGrowthBookCredentials: c, setGrowthBookStorageBackend: m}, {primeFastPathCredentials: v}] = await Promise.all([ import("./chunk-k930kb2p.js"), import("./chunk-qt993hka.js"), import("./chunk-fv97hf0r.js") ]);
+        T = p(w), c(T), m(w), await v(T);
+        let {seedInstallIDs: D} = await import("./chunk-2phrn1w8.js");
+        await D(w);
+      }
+      let S = await E(t, w, T);
+      if (S.handled) return;
+      let {exitWithError: F} = await import("./chunk-gttxwmxv.js");
+      F(S.error);
+    }
+  }
+  if (t.length === 1 && (t[0] === "--update" || t[0] === "--upgrade")) process.argv = [ process.argv[0], process.argv[1], "update" ];
+  let Z = t.indexOf("--");
+  if ((Z === -1 ? t : t.slice(0, Z)).includes("--bare")) process.env.CLAUDE_CODE_SIMPLE = "1";
+  let {NON_REPL_SUBCOMMANDS: lt, isMcpServeInvocation: pt, isPluginEvalInvocation: dt, isRemoteControlInvocation: mt, isAgentsJsonInvocation: ut, isProjectVerbInvocation: gt} = await import("./chunk-vdkwxs8c.js");
+  if (!lt.has(process.argv[2] ?? "") && !pt(process.argv.slice(2)) && !dt(process.argv.slice(2)) && !mt(process.argv.slice(2)) && !ut(process.argv.slice(2)) && !gt(process.argv.slice(2))) {
+    let {startCapturingEarlyInput: e} = await import("./chunk-13dqv7v4.js");
+    e();
+  }
+  let [{startMdmRawRead: ft}, {startKeychainPrefetch: wt}] = await Promise.all([ import("./chunk-6y47ns9x.js"), import("./chunk-6hsjv8s2.js") ]);
+  ft(), wt(), P("cli_before_main_import"), (await import("./chunk-ezh0dv3e.js")).configureZodForStartup();
+  let {main: ht} = await import("./chunk-jwvwzc40.js");
+  P("cli_after_main_import"), await ht(r), P("cli_after_main_complete");
+}
+
+Ut();

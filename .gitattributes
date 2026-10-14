@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.node binary
+*.zst binary
+*.asset binary
+*.woff2 binary
+*.png binary
+*.jpg binary

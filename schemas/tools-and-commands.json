@@ -1,0 +1,625 @@
+{
+  "total": 124,
+  "items": [
+    {
+      "name": "Extended",
+      "description": "Always uses deep reasoning",
+      "defined_in": "chunk-4p8p4fwc.js"
+    },
+    {
+      "name": "Fable",
+      "description": "For your toughest challenges",
+      "defined_in": "chunk-4p8p4fwc.js"
+    },
+    {
+      "name": "Haiku",
+      "description": "Fastest for quick answers",
+      "defined_in": "chunk-4p8p4fwc.js"
+    },
+    {
+      "name": "Opus",
+      "description": "For complex work and everyday tasks",
+      "defined_in": "chunk-4p8p4fwc.js"
+    },
+    {
+      "name": "Sonnet",
+      "description": "Most efficient for simpler tasks",
+      "defined_in": "chunk-4p8p4fwc.js"
+    },
+    {
+      "name": "Thinking",
+      "description": "Can think for more complex tasks",
+      "defined_in": "chunk-4p8p4fwc.js"
+    },
+    {
+      "name": "__remote-workflow",
+      "description": "Run the workflow script delivered in this session environment (server-launched sessions only)",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "add-dir",
+      "description": "Add a new working directory",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "advisor",
+      "description": "Let Claude consult a stronger model at key moments",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "agents",
+      "description": "(removed) Ask Claude to create/manage subagents, or edit .claude/agents/",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "alias",
+      "description": "Create or list command aliases",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "auto-mode-setup",
+      "description": "Teach auto mode about your environment, plus optional rule tweaks",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "autocompact",
+      "description": "Set how full the context gets before auto-summarizing",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "autofix-pr",
+      "description": "Monitor and autofix any issues with the current PR",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "bash",
+      "description": "Run a bash command in a persistent shell. State (cwd, env vars) persists across calls.",
+      "defined_in": "chunk-8h81c13v.js"
+    },
+    {
+      "name": "branch",
+      "description": "Create a branch of the current conversation at this point",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "brief",
+      "description": "Toggle brief-only mode",
+      "defined_in": "chunk-cn3tzm90.js"
+    },
+    {
+      "name": "browser_batch",
+      "description": "Execute a sequence of browser tool calls in ONE round trip. Each item is {name, input} where input is exactly what you'd pass to that tool standalone. Actions execute SEQUENTIALLY (not in parallel) and stop on the first error. Use this tool extensively to quickly execute work whenever you can predict two or more steps ahead \\u2014 e.g. navigate, click a field, type, press Return, screenshot. Each tool's own permission check runs per item \\u2014 if an action navigates to a domain without permission, the next item's check fails and the batch stops. Screenshots and other images are returned interleaved with outputs; coordinates you write in THIS batch refer to the screenshot taken BEFORE this call. browser_batch cannot be nested.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "btw",
+      "description": "Ask a quick side question without interrupting the main conversation",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "bug",
+      "description": "Report a bug or share your conversation",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "cc-plugin-plugin-authoring",
+      "description": "Plugin authoring: Claude knows how a plugin of function hooks is written, typed and debugged against this build",
+      "defined_in": "chunk-92vc5t46.js"
+    },
+    {
+      "name": "cc-plugin-responsive-mode",
+      "description": "Responsive mode: Claude replies to you in a sentence before thinking or using tools, on every prompt",
+      "defined_in": "chunk-w24b09sg.js"
+    },
+    {
+      "name": "cc-plugin-telemetry",
+      "description": "Telemetry: a plugin logs an analytics event through $.telemetry.log or marks a feature's use through $.telemetry.mark, sent as first-party rows in batches",
+      "defined_in": "chunk-d2z744p9.js"
+    },
+    {
+      "name": "cd",
+      "description": "Move this session to a new working directory",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "chrome",
+      "description": "Open Claude in Chrome settings",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "clear",
+      "description": "Start a new session with empty context; previous session stays on disk (resumable with /resume)",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "cloud-plugins",
+      "description": "Choose whether cloud sessions use the plugins enabled on this machine",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "color",
+      "description": "Set the prompt bar color for this session",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "command",
+      "description": "Command to run with nohup",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "compact",
+      "description": "Free up context by summarizing the conversation so far",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "config",
+      "description": "Open settings",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "context",
+      "description": "Visualize current context usage as a colored grid",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "copy",
+      "description": "Copy Claude's last response to clipboard (or /copy N for the Nth-latest)",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "count",
+      "description": "Number of tasks to run",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "daemon",
+      "description": "Manage background services and routines",
+      "defined_in": "chunk-yg1q2zjc.js"
+    },
+    {
+      "name": "default",
+      "description": "Reset to configured default",
+      "defined_in": "chunk-fxqx50da.js"
+    },
+    {
+      "name": "definition",
+      "description": "Alias definition in the form name=value",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "design-consent",
+      "description": "Grant Claude agent access to your Design projects",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "design-login",
+      "description": "Authorize design-system access for /design-sync with your claude.ai account",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "design-revoke",
+      "description": "Revoke Claude agent access to your Design projects",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "duration",
+      "description": "Duration to sleep (seconds or with suffix like 5s, 2m, 1h)",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "edit",
+      "description": "Replace old_string with new_string in a file. old_string must be unique unless replace_all.",
+      "defined_in": "chunk-8h81c13v.js"
+    },
+    {
+      "name": "effort",
+      "description": "Set effort level for model usage",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "export",
+      "description": "Export the current conversation to a file or clipboard",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "extra-usage",
+      "description": "Renamed to /usage-credits",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "feedback",
+      "description": "Send feedback to Anthropic or report a bug",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "files",
+      "description": "Specify files or directories to analyze (overrides config file)",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "focus",
+      "description": "Toggle focus view: just your prompt, summary, and response",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "fork",
+      "description": "Spawn a background agent that inherits the full conversation",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "form_input",
+      "description": "Set values in form elements using element reference ID from the read_page tool. If you don't have a valid tab ID, use tabs_context_mcp first to get available tabs.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "get_page_text",
+      "description": "Extract raw text content from the page, prioritizing article content. Ideal for reading articles, blog posts, or other text-heavy pages. Returns plain text without HTML formatting. If you don't have a valid tab ID, use tabs_context_mcp first to get available tabs.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "gif_creator",
+      "description": "Manage GIF recording and export for browser automation sessions. Control when to start/stop recording browser actions (clicks, scrolls, navigation), then export as an animated GIF with visual overlays (click indicators, action labels, progress bar, watermark). All operations are scoped to the tab's group. When starting recording, take a screenshot immediately after to capture the initial state as the first frame. When stopping recording, take a screenshot immediately before to capture the final state as the last frame. For export, either provide 'coordinate' to drag/drop upload to a page element, or set 'download: true' to download the GIF.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "glob",
+      "description": "Match files under the workdir against a glob pattern. Results are mtime-sorted, newest first.",
+      "defined_in": "chunk-8h81c13v.js"
+    },
+    {
+      "name": "goal",
+      "description": "Set a goal Claude checks before stopping",
+      "defined_in": "chunk-17aa9dm0.js"
+    },
+    {
+      "name": "grep",
+      "description": "Search file contents for a regex. Uses ripgrep if available, otherwise a built-in walker.",
+      "defined_in": "chunk-8h81c13v.js"
+    },
+    {
+      "name": "heapdump",
+      "description": "Dump the JS heap to the Desktop; on Linux with no Desktop folder, the home directory",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "help",
+      "description": "Show help and available commands",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "hooks",
+      "description": "View hook configurations for tool events",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "ide",
+      "description": "Manage IDE integrations and show status",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "import",
+      "description": "Import config from another AI coding agent",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "insights",
+      "description": "Generate a report analyzing your Claude Code sessions",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "install",
+      "description": "Install Claude Code native build",
+      "defined_in": "chunk-qepkdf4t.js"
+    },
+    {
+      "name": "install-github-app",
+      "description": "Set up Claude GitHub Actions for a repository",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "install-slack-app",
+      "description": "Install the Claude Slack app",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "keybindings",
+      "description": "Open your keyboard shortcuts file",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "list_connected_browsers",
+      "description": "List all Chrome browsers (extension instances) currently connected to this account. Returns each browser's deviceId, display name, OS platform, isLocal (its OS matches this computer's, a weak hint), when known onThisComputer (it is, or recently was, running on this computer), and inUse on the browser this session's actions go to when that is settled. When the user needs to choose a browser, use this to present the choices before select_browser.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "logout",
+      "description": "Sign out from your Anthropic account",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "loops",
+      "description": "List, create, and delete loops",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "mcp",
+      "description": "Manage MCP servers",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "memory",
+      "description": "Edit CLAUDE.md files and memory settings",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "migration-review",
+      "description": "Independent migration review",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "model",
+      "description": "Set model for new sessions from this window (not saved)",
+      "defined_in": "chunk-fxqx50da.js"
+    },
+    {
+      "name": "nohup",
+      "description": "Run a command immune to hangups",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "other",
+      "description": "approver_not_user",
+      "defined_in": "chunk-raexj74x.js"
+    },
+    {
+      "name": "plan",
+      "description": "Enable plan mode or view the current session plan",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "powerup",
+      "description": "Discover Claude Code features through quick interactive lessons",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "privacy-settings",
+      "description": "View and update your privacy settings",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "pro-trial-expired",
+      "description": "Options shown when the Pro plan Claude Code trial has ended",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "pyright",
+      "description": "Type checker for Python",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "radio",
+      "description": "Listen to Claude FM lo-fi radio",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "rate-limit-options",
+      "description": "Manage usage limits and upgrade options",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "read",
+      "description": "Read a UTF-8 text file relative to the workdir.",
+      "defined_in": "chunk-8h81c13v.js"
+    },
+    {
+      "name": "read_console_messages",
+      "description": "Read browser console messages (console.log, console.error, console.warn, etc.) from a specific tab. Useful for debugging JavaScript errors, viewing application logs, or understanding what's happening in the browser console. Returns console messages from the current domain only. If you don't have a valid tab ID, use tabs_context_mcp first to get available tabs. IMPORTANT: Always provide a pattern to filter messages - without a pattern, you may get too many irrelevant messages.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "read_network_requests",
+      "description": "Read HTTP network requests (XHR, Fetch, documents, images, etc.) from a specific tab. Useful for debugging API calls, monitoring network activity, or understanding what requests a page is making. Returns all network requests made by the current page, including cross-origin requests. Requests are automatically cleared when the page navigates to a different domain. If you don't have a valid tab ID, use tabs_context_mcp first to get available tabs.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "read_page",
+      "description": "Get an accessibility tree representation of elements on the page. By default returns all elements including non-visible ones. Output is limited to 50000 characters by default. If the output exceeds this limit it is truncated at a line boundary, with a note giving the full size \\u2014 pass a larger max_chars, or use depth/ref_id to focus on part of the page. Optionally filter for only interactive elements. If you don't have a valid tab ID, use tabs_context_mcp first to get available tabs.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "recap",
+      "description": "Generate a one-line session recap now",
+      "defined_in": "chunk-144x5tgb.js"
+    },
+    {
+      "name": "reload-plugins",
+      "description": "Activate pending plugin changes in the current session",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "reload-skills",
+      "description": "Pick up skills added or changed on disk during this session",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "remote-env",
+      "description": "Choose the default environment for cloud agents",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "resize_window",
+      "description": "Resize the current browser window to specified dimensions. Useful for testing responsive designs or setting up specific screen sizes. If you don't have a valid tab ID, use tabs_context_mcp first to get available tabs.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "resume",
+      "description": "Resume a previous conversation",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "scroll-speed",
+      "description": "Adjust mouse wheel scroll speed",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "security-review",
+      "description": "Complete a security review of the pending changes on the current branch",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "select_browser",
+      "description": "Select a specific Chrome browser by deviceId for browser automation, without broadcasting a pairing request. Use this after list_connected_browsers when the user has chosen one from the list.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "setup-bedrock",
+      "description": "Reconfigure Amazon Bedrock authentication, region, or model pins",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "setup-vertex",
+      "description": "Reconfigure Google Vertex AI authentication, project, region, or model pins",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "ship-audit",
+      "description": "Branch ship-readiness audit",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "shortcuts_execute",
+      "description": "Execute a shortcut or workflow by running it in a new sidepanel window using the current tab (shortcuts and workflows are interchangeable). Use shortcuts_list first to see available shortcuts. This starts the execution and returns immediately - it does not wait for completion.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "shortcuts_list",
+      "description": "List all available shortcuts and workflows (shortcuts and workflows are interchangeable). Returns shortcuts with their commands, descriptions, and whether they are workflows. Use shortcuts_execute to run a shortcut or workflow.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "skill-doctor",
+      "description": "Show which loaded skills are unused and costing context",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "skills",
+      "description": "List available skills",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "sleep",
+      "description": "Delay for a specified amount of time",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "srun",
+      "description": "Run a command on SLURM cluster nodes",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "status",
+      "description": "Show Claude Code status including version, model, account, API connectivity, and tool statuses",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "stickers",
+      "description": "Order Claude Code stickers",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "stop",
+      "description": "Stop this background session; transcript and worktree are kept",
+      "defined_in": "chunk-trx9cr31.js"
+    },
+    {
+      "name": "subtask",
+      "description": "Send a subagent off with your full context; its result comes back here",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "switch_browser",
+      "description": "Send a connection request to every Chrome browser with the extension installed and wait (up to 2 minutes) for the user to click 'Connect' in the one they want to use. The user can name the browser when they connect. Use this when the user wants to pick the browser themselves from inside Chrome rather than choosing from a list; otherwise prefer select_browser with a known deviceId.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "team-onboarding",
+      "description": "Help teammates ramp on Claude Code with a guide from your usage",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "teleport",
+      "description": "Send this session to the cloud, or resume one from claude.ai",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "theme",
+      "description": "Change the theme",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "time",
+      "description": "Time a command",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "timeout",
+      "description": "Run a command with a time limit",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "tui",
+      "description": "Set the terminal UI renderer (default | fullscreen)",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "ultraplan",
+      "description": "A cloud session drafts a plan you can edit and approve",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "ultrareview",
+      "description": "Find and verify bugs in your branch using a cloud session",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "upgrade",
+      "description": "Upgrade to Max for higher rate limits and more Opus",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "upload_image",
+      "description": "Upload a screenshot you took with the computer tool's screenshot action to a file input or drag & drop target. Screenshot IDs expire a few minutes after capture, so take the screenshot of what you want to upload right before uploading. Don't reuse an ID that an upload already failed with: to retry, take a new screenshot of the same content, and retry that upload at most once (never after the user declined). This tool cannot upload user-attached images or other files; use file_upload with the file's path for those, if that tool is available. Supports two approaches: (1) ref - for targeting specific elements, especially hidden file inputs, (2) coordinate - for drag & drop to visible locations like Google Docs. Provide either ref or coordinate, not both.",
+      "defined_in": "chunk-7f3bx3dq.js"
+    },
+    {
+      "name": "usage-credits",
+      "description": "Configure usage credits or request them from your admin when you hit a limit",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "version",
+      "description": "Show this session's version (autoupdate may have a newer one)",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "voice",
+      "description": "Toggle voice mode",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "web-setup",
+      "description": "Set up cloud sessions with your GitHub account",
+      "defined_in": "chunk-cvdvt5f8.js"
+    },
+    {
+      "name": "workflow-launch-exec",
+      "description": "Execute a server-launched workflow handoff (workflow_launch event sessions only)",
+      "defined_in": "chunk-84yp45y8.js"
+    },
+    {
+      "name": "write",
+      "description": "Write a UTF-8 text file relative to the workdir, creating parent directories as needed.",
+      "defined_in": "chunk-8h81c13v.js"
+    }
+  ]
+}
